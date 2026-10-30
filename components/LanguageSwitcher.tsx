@@ -11,8 +11,8 @@ export default function LanguageSwitcher() {
   const nextLocale = locale === "en" ? "ar" : "en";
 
   function changeLanguage() {
-    router.push(pathname, { locale: nextLocale });
-    
+    router.replace(pathname, { locale: nextLocale });
+    router.refresh();
   }
 
   return (

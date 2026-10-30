@@ -12,6 +12,7 @@ export default function ThemeProvider({ children }: Props) {
     <NextThemesProvider
       attribute="class"
       defaultTheme="light"
+      storageKey="roshta-theme"
       enableSystem={false}
       disableTransitionOnChange
     >
