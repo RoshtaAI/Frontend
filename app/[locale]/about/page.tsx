@@ -20,6 +20,7 @@ export default function AboutPage() {
 
         <Link
           href="/"
+          prefetch={false}
           className="primary-button inline-flex items-center justify-center"
         >
           {t("backHome")}
