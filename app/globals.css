@@ -1,6 +1,9 @@
 
 @import "tailwindcss";
 
+/* Tell Tailwind to use class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *)); 
+
 /* ==========================================
    1. BRAND COLORS
 ========================================== */
@@ -224,14 +227,63 @@ body {
 
 
 @theme inline {
+  /* --- BRAND CORE --- */
   --color-brand-navy: var(--brand-navy);
   --color-brand-teal: var(--brand-teal);
-  --color-primary: var(--primary-main);
-  --color-secondary: var(--text-secondary);
+  --color-teal-subtle: var(--teal-subtle);
+  --color-teal-hover: var(--teal-hover);
+  --color-teal-dark: var(--teal-dark-text);
+
+  /* --- ACCENTS & STATUS --- */
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-subtle: var(--accent-blue-subtle);
+  --color-success: var(--success-main);
+  --color-success-subtle: var(--success-subtle);
+  --color-error: var(--error-main);
+  --color-error-subtle: var(--error-subtle);
+
+  /* --- THEME: TEXT --- */
+  --color-primary-text: var(--text-primary); /* Use text-primary-text */
+  --color-secondary-text: var(--text-secondary);
   --color-muted: var(--text-muted);
+  --color-placeholder: var(--text-placeholder);
+
+  /* --- THEME: BACKGROUNDS --- */
   --color-page: var(--bg-page);
   --color-card: var(--bg-card);
   --color-input: var(--bg-input);
-  --color-success: var(--success-main);
-  --color-error: var(--error-main);
+  --color-input-focus: var(--bg-input-focus);
+  --color-navbar: var(--bg-navbar);
+  --color-header: var(--bg-header);
+  --color-footer: var(--bg-footer);
+
+  /* --- THEME: BORDERS --- */
+  --color-border-prominent: var(--border-prominent);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-focus: var(--border-focus);
+
+  /* --- SPACING (Tailwind uses p-xs, m-sm, etc.) --- */
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-xxl: var(--space-xxl);
+
+  /* --- BORDER RADIUS (Tailwind uses rounded-sm, rounded-md, etc.) --- */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-card: var(--radius-card);
+  --radius-pill: var(--radius-pill);
+
+  /* --- TYPOGRAPHY (Tailwind uses text-h1, font-ar, etc.) --- */
+  --font-en: var(--font-family-en);
+  --font-ar: var(--font-family-ar);
+  --text-h1: var(--h1-size);
+  --text-h2: var(--h2-size);
+  --text-h3: var(--h3-size);
+  --text-body-lg: var(--body-large-size);
+  --text-body-sm: var(--body-small-size);
+  --text-caption: var(--caption-size);
 }
