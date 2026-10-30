@@ -20,7 +20,10 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function LocaleLayout({ children, params }: Props) {
+export default async function LocaleLayout({
+  children,
+  params,
+}: Props) {
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -36,12 +39,15 @@ export default async function LocaleLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <body className="min-h-screen">
-        <ThemeProvider>
-          <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
             <Navbar />
-            <main className="min-h-screen">{children}</main>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+
+            <main className="min-h-screen">
+              {children}
+            </main>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
