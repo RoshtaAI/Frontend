@@ -1,26 +1,237 @@
+
 @import "tailwindcss";
 
+/* ==========================================
+   1. BRAND COLORS
+========================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Core */
+  --brand-navy: #081736;
+  --brand-teal: #1fc7ab;
+  --teal-subtle: rgba(31, 199, 171, 0.12);
+  --teal-hover: #17b399;
+  --teal-dark-text: #0d8370;
+
+  --accent-blue: #294658;
+  --accent-blue-subtle: rgba(41, 70, 88, 0.15);
+
+  /* Status Colors */
+  --success-main: #22c55e;
+  --success-subtle: rgba(34, 197, 94, 0.1);
+  --error-main: #ef4444;
+  --error-subtle: rgba(239, 68, 68, 0.1);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-xxl: 28px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 15px;
+  --radius-card: 28px;
+  --radius-pill: 30px;
+
+  /* Sizing */
+  --card-width: 500px;
+  --input-height: 44px;
+  --button-height: 48px;
+  --input-padding: 10px 13px;
+  --navbar-height: 64px;
+
+  /* Typography */
+  --font-family-en: "Inter", system-ui, sans-serif;
+  --font-family-ar: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+  --font-family-current: var(--font-family-en);
+
+  --h1-size: 32px;
+  --h2-size: 21px;
+  --h3-size: 20px;
+  --body-large-size: 16px;
+  --body-small-size: 14px;
+  --caption-size: 12px;
+
+  /* Light Theme - Default */
+  --primary-main: var(--brand-navy);
+  --primary-subtle: rgba(8, 23, 54, 0.08);
+
+  --text-primary: #081736;
+  --text-secondary: #294658;
+  --text-muted: #6b7c93;
+  --text-placeholder: #a0aec0;
+
+  --bg-page: #fbfbfc;
+  --bg-card: #ffffff;
+  --bg-input: #f0f0f1;
+  --bg-input-focus: #e5e7eb;
+
+  --bg-button: linear-gradient(135deg, var(--brand-navy), #102a5c);
+  --bg-button-hover: linear-gradient(135deg, #102a5c, #193c7a);
+
+  --border-prominent: rgba(8, 23, 54, 0.2);
+  --border-subtle: rgba(8, 23, 54, 0.08);
+  --border-focus: var(--brand-navy);
+
+  --bg-navbar: rgba(251, 251, 252, 0.9);
+  --border-navbar: rgba(8, 23, 54, 0.1);
+  --bg-header: #f0f0f1;
+  --bg-footer: #e8ecef;
+
+  --shadow-card: 0 8px 30px rgba(31, 199, 171, 0.12);
+  --shadow-input: 0 2px 12px rgba(31, 199, 171, 0.06);
+  --shadow-toggle: 0 1px 6px rgba(31, 199, 171, 0.1);
+  --shadow-button: 0 4px 18px rgba(8, 23, 54, 0.25);
+  --shadow-focus: 0 0 0 3px rgba(31, 199, 171, 0.35);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ==========================================
+   2. DARK THEME
+========================================== */
+
+:root.dark {
+  --primary-main: var(--brand-teal);
+  --primary-subtle: rgba(31, 199, 171, 0.15);
+
+  --text-primary: #f0f4f8;
+  --text-secondary: #92a8c0;
+  --text-muted: #5e7793;
+  --text-placeholder: #71849a;
+
+  --bg-page: #081736;
+  --bg-card: #0d214f;
+  --bg-input: #122c4a;
+  --bg-input-focus: #192d5b;
+
+  --bg-button: linear-gradient(135deg, var(--brand-teal), #17b399);
+  --bg-button-hover: linear-gradient(135deg, #25e0c1, #1fc7ab);
+
+  --border-prominent: rgba(31, 199, 171, 0.3);
+  --border-subtle: rgba(31, 199, 171, 0.12);
+  --border-focus: var(--brand-teal);
+
+  --bg-navbar: rgba(8, 23, 54, 0.9);
+  --border-navbar: rgba(31, 199, 171, 0.15);
+  --bg-header: #0d214f;
+  --bg-footer: #050f24;
+
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.55);
+  --shadow-input: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --shadow-toggle: 0 1px 6px rgba(0, 0, 0, 0.45);
+  --shadow-button: 0 4px 18px rgba(31, 199, 171, 0.25);
+  --shadow-focus: 0 0 0 3px rgba(31, 199, 171, 0.3);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ==========================================
+   3. RTL / ARABIC
+========================================== */
+
+:root[lang="ar"] {
+  --font-family-current: var(--font-family-ar);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   4. GLOBAL STYLES
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-family-current);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==========================================
+   5. SHARED UTILITY CLASSES
+========================================== */
+
+.link-action-text {
+  color: var(--teal-dark-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dark .link-action-text {
+  color: var(--brand-teal);
+}
+
+.container-custom {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.primary-button {
+  min-height: var(--button-height);
+  padding: 0 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--bg-button);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primary-button:hover {
+  background: var(--bg-button-hover);
+  box-shadow: var(--shadow-button);
+}
+
+.form-input {
+  width: 100%;
+  min-height: var(--input-height);
+  padding: var(--input-padding);
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+.form-input:focus {
+  background-color: var(--bg-input-focus);
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-focus);
+}
+
+.form-input::placeholder {
+  color: var(--text-placeholder);
+}
+
+
+
+@theme inline {
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-teal: var(--brand-teal);
+  --color-primary: var(--primary-main);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-page: var(--bg-page);
+  --color-card: var(--bg-card);
+  --color-input: var(--bg-input);
+  --color-success: var(--success-main);
+  --color-error: var(--error-main);
 }

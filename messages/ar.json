@@ -1,0 +1,19 @@
+{
+  "HomePage": {
+    "title": "مرحباً بك في تطبيقنا",
+    "description": "هذا تطبيق يدعم اللغتين العربية والإنجليزية.",
+    "button": "ابدأ الآن",
+    "language": "تغيير اللغة"
+  },
+  "Navbar": {
+    "projectTitle": "روشتا",
+    "home": "الرئيسية",
+    "about": "عن المشروع",
+    "changeTheme": "تغيير المظهر"
+  },
+  "AboutPage": {
+    "title": "عن مشروعنا",
+    "description": "تم إنشاء هذا المشروع باستخدام Next.js وTypeScript وTailwind CSS وnext-intl.",
+    "backHome": "العودة للرئيسية"
+  }
+}

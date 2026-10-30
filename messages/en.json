@@ -1,0 +1,19 @@
+{
+  "HomePage": {
+    "title": "Welcome to our application",
+    "description": "This is a bilingual Next.js application.",
+    "button": "Get Started",
+    "language": "Change Language"
+  },
+  "Navbar": {
+    "projectTitle": "Roshta",
+    "home": "Home",
+    "about": "About",
+    "changeTheme": "Change theme"
+  },
+  "AboutPage": {
+    "title": "About Our Project",
+    "description": "This project is built using Next.js, TypeScript, Tailwind CSS, and next-intl.",
+    "backHome": "Back to Home"
+  }
+}
