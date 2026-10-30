@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
 
   function changeLanguage() {
     router.replace(pathname, { locale: nextLocale });
-    router.refresh();
+    
   }
 
   return (
