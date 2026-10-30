@@ -11,6 +11,13 @@ import type { ReactNode } from "react";
 
 import Navbar from "@/components/Navbar";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Roshta",
+  description: "Read prescriptions and check medication safety with AI.",
+};
+
 export const instant = false;
 
 type Props = {
