@@ -11,6 +11,8 @@ import type { ReactNode } from "react";
 
 import Navbar from "@/components/Navbar";
 
+export const instant = false;
+
 type Props = {
   children: ReactNode;
   params: Promise<{ locale: string }>;
