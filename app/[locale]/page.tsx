@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <section className="flex min-h-[80vh] items-center justify-center bg-page px-6 py-16">
 
-      <div className="card w-full max-w-xl p-10 text-center">
+      <div className="card w-full max-w-3xl p-10 text-center">
 
         <h1 className="mb-4 text-3xl font-bold text-primary">
           {t("title")}
