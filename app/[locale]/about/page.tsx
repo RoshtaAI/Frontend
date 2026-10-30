@@ -1,7 +1,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-export const instant = false;
+
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
 

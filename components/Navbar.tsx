@@ -13,6 +13,7 @@ export default function Navbar() {
         {/* Project Title */}
         <Link
           href="/"
+          prefetch={false}
           className="hover:text-brand-teal font-medium text-[var(--text-secondary)] transition"
         >
           <Image
@@ -29,6 +30,7 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <Link
             href="/"
+            prefetch={false}
             className="hover:text-brand-teal font-medium text-[var(--text-secondary)] transition"
           >
             {t("home")}
@@ -36,6 +38,7 @@ export default function Navbar() {
 
           <Link
             href="/about"
+            prefetch={false}
             className="hover:text-brand-teal font-medium text-[var(--text-secondary)] transition"
           >
             {t("about")}
