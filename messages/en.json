@@ -2,7 +2,7 @@
   "HomePage": {
     "title": "Welcome to our application",
     "description": "This is a bilingual Next.js application.",
-    "button": "Get Start",
+    "button": "Get Started",
     "language": "Change Language"
   },
   "Navbar": {
